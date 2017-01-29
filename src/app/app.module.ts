@@ -1,28 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component';
+import { RecipeBookAppComponent } from "./recipe-book.component";
+import { HeaderComponent } from "./header.component";
+import { DropdownDirective } from "./dropdown.directive";
+
+import { ShoppingListService } from "./shopping-list/shopping-list.service";
+import { RecipeService } from "./recipes/recipe.service";
+import { routing } from "./app.routing";
+import { HttpModule } from "@angular/http";
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    RecipeBookAppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeItemComponent
-     ],
+    DropdownDirective,
+    HomeComponent
+    
+    
+  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    routing,
+    HttpModule,
+        
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ShoppingListService, RecipeService],
+  bootstrap: [RecipeBookAppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+

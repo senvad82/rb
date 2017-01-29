@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.20-4",
-    "name": "receipe-book"
+    "version": "1.0.0-beta.19-3",
+    "name": "complete-guide"
   },
   "apps": [
     {
@@ -9,16 +9,16 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "images"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "rb",
+      "prefix": "app",
       "mobile": false,
       "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "styles.css"
       ],
       "scripts": [],
